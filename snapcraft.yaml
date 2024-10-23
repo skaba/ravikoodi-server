@@ -49,14 +49,16 @@ apps:
 parts:
   ravikoodi:
     plugin: maven
-    source: https://github.com/raydac/ravikoodi-server.git
-    source-tag: master
+    source: https://github.com/skaba/ravikoodi-server.git
+    source-tag: snap
     source-type: git
     maven-parameters:
       [-f ravikoodi-app/pom.xml -DskipTests]
 
     override-pull: |
      craftctl default
+     echo "Debug"
+     mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version -X -e
      craftctl set version=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }')-$(git rev-parse --short HEAD)
 
     build-packages:

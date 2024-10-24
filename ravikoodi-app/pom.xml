@@ -25,6 +25,7 @@
                 <updatePolicy>never</updatePolicy>
             </releases>    
         </repository>
+
     </repositories>
 
     <properties>
@@ -654,7 +655,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
+                <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

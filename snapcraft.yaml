@@ -58,7 +58,7 @@ parts:
     override-pull: |
      craftctl default
      echo "Debug"
-     mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version -X -e
+     mvn -U org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version -X -e
      craftctl set version=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }')-$(git rev-parse --short HEAD)
 
     build-packages:

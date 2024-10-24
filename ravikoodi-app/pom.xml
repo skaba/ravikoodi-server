@@ -23,7 +23,7 @@
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
-            </releases>    
+            </releases>
         </repository>
 
     </repositories>
